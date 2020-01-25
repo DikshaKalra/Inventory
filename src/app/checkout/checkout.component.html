@@ -1,0 +1,92 @@
+<style>
+  table,th,td
+  {
+    border:0.5px solid black;
+    align-items: center;
+    
+  }
+  table{
+    width: 40%;
+  }
+  
+  div
+  {
+    text-align: center;
+  }
+  #tableid tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableid tr:hover {background-color: #ddd;}
+
+#tableid th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:	#7070db;
+  color: white;
+}
+#tableid1 tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableid1 tr:hover {background-color: #ddd;}
+
+#tableid1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #7070db;
+  color: white;
+}
+  </style>
+  <div *ngIf="show.length>0">
+  <div *ngFor="let it of show" >
+    <table align="center" id="tableid1">
+      <tr>
+  <th  style="
+  text-align: center;
+">Items</th>
+  <th  style="
+  text-align: center;
+">Price</th>
+    </tr>
+    <tr>
+    <td>{{it.item1}}</td>
+  <td>{{it.price1}}</td>
+  </tr>
+  <tr>
+    
+    <td>{{it.item2}}</td> <td>{{it.price2}}</td>
+    </tr>
+    <tr><td><strong>Total</strong></td><td><b>{{it.total}}</b></td></tr>
+
+    </table><br>
+    <button mat-raised-button color="primary" (click)="checkout()">Checkout</button>
+  </div>
+  </div>
+  
+    <hr>
+    <div *ngIf="ch">
+      <div *ngFor="let it1 of show" >
+        <table align="center" id="tableid">
+          <tr align="center">
+            <th  style="
+            text-align: center;
+        ">Items</th><th  style="
+    text-align: center;
+">Price</th>
+          </tr>
+          <tr>
+            <td>{{it1.item1}}</td><td>{{it1.price1}}</td>
+          </tr>
+          <tr>
+            <td>{{it1.item2}}</td><td>{{it1.price2}}</td>
+          </tr>
+          <tr>
+            <td><b>Total Amount </b></td><td><b>{{total1}}</b></td>
+          </tr>
+          <tr>
+            <td><b>Amount (including Taxes)</b></td><td><b>{{amountpay}}</b></td>
+          </tr>
+        </table><br><br>
+             </div>
+  </div>
+  
+  
